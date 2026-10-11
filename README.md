@@ -5,11 +5,15 @@ Muestra como la plataforma bloquea automaticamente un git push si detecta un tok
 
 ## 1. Como activar la proteccion
 
-1. Crea un repo nuevo VACIO y en PUBLICO en tu Github personal  (ej: demo-secret-prueba) sin README
-   IMPORTANTE: En Publico, si es Privado con cuenta gratis no aparece Push Protection.
-2. Entra a Settings > Code security and analysis
+IMPORTANTE: Este repo que estas viendo (demo-secret-scanning) es SOLO de ejemplo para leer. No lo clones para modificar ni hagas push aca para no generar inconsistencias.
+
+Para la practica crea TU PROPIO repo de prueba:
+
+1. Crea un repo nuevo VACIO y en PUBLICO solo de ejemplo (ej: demo-secret-prueba) sin README
+   Debe ser Publico, si es Privado con cuenta gratis no aparece Push Protection.
+2. Entra a Settings > Code security and analysis de TU repo nuevo
 3. Activa Secret scanning y Push protection
-4. Clonalo en tu PC:
+4. Clonalo en tu PC para tener el repo local donde hacer la prueba:
 git clone https://github.com/TU_USUARIO/demo-secret-prueba.git
 cd demo-secret-prueba
 
