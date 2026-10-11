@@ -19,13 +19,13 @@ cd demo-secret-prueba
 
 ## 2. Como probar el bloqueo
 
-Estando DENTRO de la carpeta de tu repo nuevo, vas a crear un archivo .env:
+Estando DENTRO de la carpeta de tu repo nuevo, vas a crear un archivo llamado .env (aclaracion: .env es el nombre completo, no lleva nada antes del punto):
 
 Que es notepad? Es el editor de texto de Windows. Cuando pones "notepad .env" en Git Bash, se abre una ventanita para escribir.
 
 Hace asi:
 notepad .env
-Se abre el Bloc de Notas. Pega un token de prueba con formato real, guardalo (Archivo > Guardar) y cerralo.
+Se abre el Bloc de Notas. Pega un token de prueba con formato real , por ejemplo : xxxxxxxxxxxxxxxxxxxx , guardalo (Archivo > Guardar) y cerralo.
 
 Verifica que se creo con: ls
 
