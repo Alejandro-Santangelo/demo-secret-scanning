@@ -1,62 +1,56 @@
-Demo: Como GitHub te protege de subir secretos
+# Demo: Como te protege Github  de subir secret key 
 
-Que hace esta demo?
-
+## Que hace esta demo?
 Muestra como la plataforma bloquea automaticamente un git push si detecta un token.
 
+## 1. Como activar la proteccion
 
+1. Crea un repo nuevo VACIO y en PUBLICO en tu Github personal  (ej: demo-secret-prueba) sin README
+   IMPORTANTE: En Publico, si es Privado con cuenta gratis no aparece Push Protection.
+2. Entra a Settings > Code security and analysis
+3. Activa Secret scanning y Push protection
+4. Clonalo en tu PC:
+git clone https://github.com/TU_USUARIO/demo-secret-prueba.git
+cd demo-secret-prueba
 
-1\. Como activar la proteccion en tu repo
+## 2. Como probar el bloqueo (aca dentro del repo nuevo)
 
-Crea un repo nuevo vacio (ej: demo-secret-prueba)
+Estando DENTRO de la carpeta demo-secret-prueba, crea el archivo .env:
 
-Entra a Settings > Code security and analysis
+Opcion A con Git Bash:
+echo "PEGA ACA UN TOKEN DE PRUEBA CON FORMATO REAL" > .env
 
-Activa Secret scanning y Push protection
+Opcion B con Notepad:
+notepad .env
+(Pega el token, guarda y cerra)
 
-2\. Como probar el bloqueo
+Verifica que se creo: ls
 
-Crea un .env de prueba con un token con formato real y luego intenta subirlo:
-
-
-
+Ahora intenta subirlo:
 git add .env
-
 git commit -m "prueba secreto"
-
 git push
 
+Vas a ver error GH013 en rojo.
 
+## 3. Por que borrar no alcanza?
 
-Vas a ver error GH013 en rojo. El push no sube.
+git rm .env -f no alcanza, queda en el historial.
 
+## 4. Como arreglarlo correctamente
 
-
-3\. Por que borrar no alcanza?
-
-Si haces git rm .env -f no alcanza, porque el secreto queda en el historial.
-
-
-
-4\. Como arreglarlo
-
-git reset --hard HEAD\~1
-
+git reset --hard HEAD~1
 rm .env
-
 git push
 
+## 5. Buena practica final
 
-
-5\. Buena practica
-
-Crea un .gitignore con:
-
+Crea un .gitignore en la RAIZ:
+notepad .gitignore
+Pega:
 .env
+node_modules/
 
-node\_modules/
-
-
-
-Nunca subas .env, subi .env.example vacio.
-
+git add .gitignore
+git commit -m "agrego gitignore"
+git push
