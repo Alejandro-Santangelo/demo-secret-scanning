@@ -25,7 +25,7 @@ Que es notepad? Es el editor de texto de Windows. Cuando pones "notepad .env" en
 
 Hace asi:
 notepad .env
-Se abre el Bloc de Notas. Pega un token de prueba con formato real , por ejemplo : xxxxxxxxxxxxxxxxxxxx , guardalo (Archivo > Guardar) y cerralo.
+Se abre el Bloc de Notas. Pega un token de prueba con formato real , por ejemplo : xxxxxxxxxxxxxxxxxxxx (reemplaza por numeros, letras, simbolos especiales, como si fuera una secret key real) , guardalo (Archivo > Guardar) y cerralo.
 
 Verifica que se creo con: ls
 
